@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #242222;
+        }
+        .signup-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            height: 470px;
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            height: 30px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #101010;
+            border-radius: 5px;
+            font-size: large;
+        }
+        button {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            background: #0c0c0c;
+            color: rgb(244, 242, 242);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: larger;
+            margin-bottom:10px;
+        }
+        button:hover {
+            background: #9c2020;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="new-username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="new-password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+        <p class="error" id="signup-error"></p>
+        <button onclick="validateSignup()">Sign Up</button>
+        <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+    
+    <script>
+        function validateSignup() {
+            const username = document.getElementById('new-username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const errorMessage = document.getElementById('signup-error');
+            
+            if (!username || !email || !password || !confirmPassword) {
+                errorMessage.textContent = "All fields are required";
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match";
+                return;
+            }
+            
+            alert("Sign-up successful! Redirecting to login...");
+            window.location.href = "clothing.html";
+        }
+    </script>
+</body>
+</html>

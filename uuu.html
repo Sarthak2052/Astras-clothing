@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .cart { max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; }
+        .item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .item img { width: 50px; height: 50px; margin-right: 10px; border-radius: 5px; }
+        .details { flex-grow: 1; }
+        .total { margin-top: 20px; text-align: right; font-size: 1.2em; font-weight: bold; }
+        button { padding: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <div class="total">Total: $0</div>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItems = document.getElementById('cart-items');
+            let total = 0;
+            cartItems.innerHTML = '';
+        
+            cart.forEach((item, index) => {
+                let itemTotal = item.price * item.quantity;
+                total += itemTotal;
+        
+                // Check if image exists, else set a default image
+                let imageSrc = item.image ? item.image : 'nazar.webp';
+        
+                cartItems.innerHTML += `
+                    <div class="item">
+                        <img src="${imageSrc}" alt="${item.name}" width="50">
+                        <div class="details">
+                            <span>${item.name}</span>
+                            <br>
+                            <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+                            <span>$${itemTotal}</span>
+                        </div>
+                        <button onclick="removeItem(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        
+            document.querySelector('.total').textContent = `Total: $${total}`;
+        }
+
+        function updateQuantity(index, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            cart[index].quantity = parseInt(quantity);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

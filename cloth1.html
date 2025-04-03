@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Your Brand</title>
+    <link rel="stylesheet" href="cloth1.css">
+    
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="#">Astras</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="clothing.html">Home</a></li>
+            <li><a href="clothing.html#products">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="cart-login">
+            <a href="#">Cart</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Product Image Gallery -->
+        <section class="product-gallery">
+            <img src="Frame69.webp" alt="Main Product Image" class="main-image" >
+            <div class="thumbnail-images">
+                <img src="Frame70.webp" alt="Product Thumbnail 1" height="200">
+                <img src="Frame71.webp" alt="Product Thumbnail 2" height="200">
+                <img src="Frame68.webp" alt="Product Thumbnail 3" height="200">
+            </div>
+        </section>
+
+        <!-- Product Details -->
+        <section class="product-details">
+            <h1> Hanuman Black Hoodie</h1>
+            <pre class="price"><span class="original-price">₹1,499.00</span>  ₹999.00 </pre>
+            <p class="description">
+                Detailed description of the product highlighting its features, materials, and any other relevant information.
+            </p>
+            <div class="size-options">
+                <label style="color: azure;">Size </label><br>
+
+                <button>Small</button>
+                <button>Medium</button>
+                <button>Large</button>
+                <button>XL</button>
+            </div>
+            <p class="quantity_header">Quantity</p>
+            <div class="quantity-selector">
+                
+                <button id="decrease">-</button>
+                <input type="text" id="quantity" value="1" readonly>
+                <button id="increase">+</button>
+            </div>
+            <div class_add_buy>
+            <button class="add-to-cart">Add to cart</button>
+            <button class="buy-now">Buy it now</button>
+            </div>
+            <p class="discription">
+                Elevate your style with our oversized Lord Hanuman-inspired T-shirt. This design captures Lord Hanuman's strength and courage in vibrant detail. Crafted with devotion, it's a unique blend of spirituality and fashion
+            </p>
+            <script>
+                const decreaseBtn = document.getElementById("decrease");
+                const increaseBtn = document.getElementById("increase");
+                const quantityInput = document.getElementById("quantity");
+                
+                decreaseBtn.addEventListener("click", () => {
+                    let value = parseInt(quantityInput.value);
+                    if (value > 1) {
+                        quantityInput.value = value - 1;
+                    }
+                });
+                
+                increaseBtn.addEventListener("click", () => {
+                    let value = parseInt(quantityInput.value);
+                    quantityInput.value = value + 1;
+                });
+            </script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Brand. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* styles.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+   
+}
+
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color:#1f1f21;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+nav a:hover {
+    color: #882d2d;
+}
+.navsecond{
+    height: 60px;
+    background-color: #8d0a0a;
+
+}
+
+
+#products {
+    padding: 40px;
+    background-color: #1f1f21;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product {
+    background-color: rgb(225, 225,225);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    height: 280px;
+    text-decoration: none;
+
+    
+
+    
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    max-width: 100%;
+    height: 170px;
+    margin-bottom: 25px;
+    
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+#namelogo{
+    background-image:url(weapon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    color:transparent;
+    -webkit-background-clip: text;
+    font-size: 50px;
+}
+h2{
+    font-size: 35px;
+    color: #ccc;
+}
+
+input{
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+
+  #result {
+    color: #f9f9f9;
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+  }
+  #secp{
+    font-size: 18px;
+    color:rgb(87, 157, 185); ;
+  }
+  .backvideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+  }
+  #contact{
+    text-align: left;
+    padding-left: 20px;
+  }
+ .product_name{
+    text-decoration: underline;
+    text-align: center;
+ }
+  
+ a{
+    text-decoration: none;
+    color: #111;
+    visited{
+        text-decoration: none;
+        color: #111;
+    }
+ }
+
